@@ -54,64 +54,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-/*
-@Composable
-fun UserListView(users: List<Album>) {
-    /*
-    LazyColumn {
-        items(users) { user ->
-            AppMainScreen(/*navController = rememberNavController(),*/ user = user)
-        }
-    }
-
-    LazyColumn {
-        items(users) { user ->
-            UserItem(navController = rememberNavController(), user = user)
-        }
-    }
-
-     */
-}
-
-@Composable
-fun UserItem(navController: NavController, user: Album) {
-    Row(
-        modifier = Modifier.padding(10.dp)
-    ) {
-        Box(
-            modifier = Modifier
-                .size(100.dp),
-            contentAlignment = Alignment.Center
-        ) {
-            Image(
-                painter = rememberAsyncImagePainter(user.thumbnailUrl),
-                contentDescription = null,
-                modifier = Modifier
-                    .size(100.dp)
-            )
-            val context = LocalContext.current
-            Button(
-                //onClick = { navController.navigate("fullscreen") },
-                onClick = { Toast.makeText(context, "Should change screen", Toast.LENGTH_LONG).show() },
-                modifier = Modifier.size(100.dp),
-                colors = ButtonDefaults.buttonColors(backgroundColor = Color.Transparent)
-            ) {
-            }
-        }
-        Column(
-            modifier = Modifier.padding(start = 6.dp),
-            verticalArrangement = Arrangement.Center
-        ) {
-            Text(
-                text = user.title,
-                fontSize = 20.sp,
-                color = Color.Black
-            )
-        }
-    }
-}
-*/
-
 val insertSampleData = listOf(
     Entity(Photos("","",""), "", "", ""),
 )

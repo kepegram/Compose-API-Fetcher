@@ -42,10 +42,10 @@ fun HomeScreen(navController: NavController, user: Photos) {
                 modifier = Modifier
                     .size(100.dp)
             )
-            //val context = LocalContext.current
+            val context = LocalContext.current
             Button(
-                onClick = { navController.navigate(route = Routes.AlbumFullScreen.route) },
-                //onClick = { Toast.makeText(context, "Should change screen", Toast.LENGTH_LONG).show() },
+                //onClick = { navController.navigate("fullscreen") },
+                onClick = { Toast.makeText(context, "Should change screen", Toast.LENGTH_LONG).show() },
                 modifier = Modifier.size(100.dp),
                 colors = ButtonDefaults.buttonColors(backgroundColor = Color.Transparent)
             ) {
@@ -66,7 +66,7 @@ fun HomeScreen(navController: NavController, user: Photos) {
 }
 
 @Composable
-fun AlbumScreen(navController: NavController, user: Photos) {
+fun AlbumScreen(navController: NavController) {
     Column(
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -103,7 +103,7 @@ fun Navigation(navController: NavHostController) {
             HomeScreen(navController = navController, user = Photos("", "", ""))
         }
         composable(Routes.AlbumFullScreen.route) {
-            AlbumScreen(navController = navController, user = Photos("", "", ""))
+            AlbumScreen(navController = navController)
         }
     }
 }
